@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- use constructor -->
+    <bean name="student1" class="com.bambrow.spring.pojo.Student">
+        <constructor-arg name="name" value="David" />
+        <constructor-arg name="id" value="101" />
+    </bean>
+
+    <!-- use c-namespace, ref should be used like c:name-ref -->
+    <bean name="student2" class="com.bambrow.spring.pojo.Student" c:name="Eva" c:id="102" />
+
+    <!-- use p-namespace, must not have constructor in class -->
+    <bean name="student3" class="com.bambrow.spring.pojo.StudentNoConstructor" p:name="Fred" p:id="103" />
+
+</beans>

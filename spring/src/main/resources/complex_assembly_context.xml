@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- two methods of collection assembly -->
+    <!-- the second method uses xmlns:util -->
+
+    <bean id="complexAssembly1" class="com.bambrow.spring.pojo.ComplexAssembly">
+        <!-- basic type -->
+        <property name="id" value="1" />
+        <!-- if using ref -->
+        <!--property name="id" ref="com.bambrow.spring.bean" /-->
+
+        <!-- list -->
+        <property name="list">
+            <list>
+                <value>list1</value>
+                <value>list2</value>
+                <value>list3</value>
+                <!-- if using ref -->
+                <!--ref com.bambrow.spring.bean="com.bambrow.spring.bean" /-->
+            </list>
+        </property>
+
+        <!-- map -->
+        <property name="map">
+            <map>
+                <entry key="map1" value="value1" />
+                <entry key="map2" value="value2" />
+                <entry key="map3" value="value3" />
+                <!-- if using ref -->
+                <!--entry key-ref="keyBean" value-ref="valueBean" /-->
+            </map>
+        </property>
+
+        <!-- properties -->
+        <property name="properties">
+            <props>
+                <prop key="prop1">value1</prop>
+                <prop key="prop2">value2</prop>
+                <prop key="prop3">value3</prop>
+            </props>
+        </property>
+
+        <!-- set -->
+        <property name="set">
+            <set>
+                <value>set1</value>
+                <value>set2</value>
+                <value>set3</value>
+                <!-- if using ref -->
+                <!--ref com.bambrow.spring.bean="com.bambrow.spring.bean" /-->
+            </set>
+        </property>
+
+        <!-- array -->
+        <property name="array">
+            <array>
+                <value>array1</value>
+                <value>array2</value>
+                <value>array3</value>
+                <!-- if using ref -->
+                <!--ref com.bambrow.spring.bean="com.bambrow.spring.bean" /-->
+            </array>
+        </property>
+    </bean>
+
+    <bean id="complexAssembly2" class="com.bambrow.spring.pojo.ComplexAssembly">
+        <property name="id" value="2" />
+        <property name="list">
+            <util:list>
+                <value>list1</value>
+                <value>list2</value>
+                <value>list3</value>
+            </util:list>
+        </property>
+        <property name="map">
+            <util:map>
+                <entry key="map1" value="value1" />
+                <entry key="map2" value="value2" />
+                <entry key="map3" value="value3" />
+            </util:map>
+        </property>
+        <property name="properties">
+            <util:properties>
+                <prop key="prop1">value1</prop>
+                <prop key="prop2">value2</prop>
+                <prop key="prop3">value3</prop>
+            </util:properties>
+        </property>
+        <property name="set">
+            <util:set id="set">
+                <value>set1</value>
+                <value>set2</value>
+                <value>set3</value>
+            </util:set>
+        </property>
+        <property name="array">
+            <array>
+                <value>array1</value>
+                <value>array2</value>
+                <value>array3</value>
+            </array>
+        </property>
+    </bean>
+
+</beans>

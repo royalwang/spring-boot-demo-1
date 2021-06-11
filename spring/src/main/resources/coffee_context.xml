@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- required for @Autowired -->
+    <context:annotation-config />
+
+    <!-- coffee1: assign all values -->
+    <bean name="coffee1" class="com.bambrow.spring.pojo.Coffee">
+        <property name="milk" value="whole milk"/>
+        <property name="sugar" value="half sugar"/>
+        <property name="size" value="large size"/>
+    </bean>
+
+    <!-- coffee2: same as coffee1 -->
+    <bean name="coffee2" class="com.bambrow.spring.pojo.Coffee">
+        <property name="milk" value="whole milk"/>
+        <property name="sugar" value="half sugar"/>
+        <property name="size" value="large size"/>
+    </bean>
+
+    <!-- coffeeMaker: assign all values -->
+    <bean name="coffeeMaker" class="com.bambrow.spring.pojo.CoffeeMaker">
+        <property name="coffee" ref="coffee1" />
+    </bean>
+
+    <!-- coffeeMakerAutowired: @Autowired with @Qualifier -->
+    <bean name="coffeeMakerAutowired" class="com.bambrow.spring.pojo.CoffeeMakerAutowired" />
+
+</beans>

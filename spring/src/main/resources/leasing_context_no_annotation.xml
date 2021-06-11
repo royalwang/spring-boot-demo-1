@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean name="lessor" class="com.bambrow.spring.aop.LessorNoAnnotation" />
+    <bean name="agency" class="com.bambrow.spring.aop.AgencyNoAnnotation" />
+
+    <!-- same effect as the annotation version -->
+    <aop:config>
+        <!-- where: use with what package/class/method -->
+        <aop:pointcut id="lessorPoint" expression="execution(* com.bambrow.spring.aop.LessorNoAnnotation.service())" />
+        <!-- what: what kind of aspect -->
+        <aop:aspect id="logAspect" ref="agency">
+            <!-- when: when to intercept -->
+            <aop:before pointcut-ref="lessorPoint" method="before" />
+            <aop:after pointcut-ref="lessorPoint" method="after" />
+        </aop:aspect>
+    </aop:config>
+
+</beans>
