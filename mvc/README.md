@@ -1,6 +1,6 @@
 # Spring MVC Demo
 
-This repository serves as a basic demo of a Spring MVC application.
+This module serves as a basic demo of a Spring MVC application.
 
 In IntelliJ IDEA, the Run/Debug Configuration settings should be as follows:
 
