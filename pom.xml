@@ -13,6 +13,7 @@
         <module>spring</module>
         <module>mvc</module>
         <module>starter</module>
+        <module>mysql</module>
     </modules>
 
     <properties>
@@ -26,6 +27,8 @@
         <mysql.version>8.0.21</mysql.version>
         <guava.version>29.0-jre</guava.version>
         <junit.version>4.12</junit.version>
+        <lombok.version>1.18.20</lombok.version>
+        <hutool.version>5.7.0</hutool.version>
     </properties>
 
    <dependencyManagement>
@@ -38,6 +41,16 @@
            <dependency>
                <groupId>org.springframework.boot</groupId>
                <artifactId>spring-boot-starter-web</artifactId>
+               <version>${spring.boot.version}</version>
+           </dependency>
+           <dependency>
+               <groupId>org.springframework.boot</groupId>
+               <artifactId>spring-boot-starter-jdbc</artifactId>
+               <version>${spring.boot.version}</version>
+           </dependency>
+           <dependency>
+               <groupId>org.springframework.boot</groupId>
+               <artifactId>spring-boot-starter-data-jpa</artifactId>
                <version>${spring.boot.version}</version>
            </dependency>
            <dependency>
@@ -87,6 +100,11 @@
                <version>${guava.version}</version>
            </dependency>
            <dependency>
+               <groupId>cn.hutool</groupId>
+               <artifactId>hutool-core</artifactId>
+               <version>${hutool.version}</version>
+           </dependency>
+           <dependency>
                <groupId>junit</groupId>
                <artifactId>junit</artifactId>
                <version>${junit.version}</version>
@@ -95,7 +113,7 @@
            <dependency>
                <groupId>org.projectlombok</groupId>
                <artifactId>lombok</artifactId>
-               <version>1.18.20</version>
+               <version>${lombok.version}</version>
                <scope>compile</scope>
            </dependency>
        </dependencies>
