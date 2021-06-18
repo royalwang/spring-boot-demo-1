@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bambrow.mybatis.mapper.StudentMapper">
+
+    <!-- StudentMapper.resetTable -->
+    <insert id="resetTable">
+        DELETE FROM student;
+        INSERT INTO student (name, username, age, email) VALUES
+            ('Amy', 'amy', 18, 'amy@a.com'),
+            ('Bob', 'bob', 19, 'bob@a.com'),
+            ('Cathy', 'cat', 22, null),
+            ('David', 'david', null, null),
+            ('Eva', 'eva', null, 'eva@a.com');
+    </insert>
+
+</mapper>
