@@ -10,11 +10,28 @@ Before running this demo, please install [Docker](https://docs.docker.com/engine
 and start MySQL and Redis Docker container: 
 
 ```bash
+# download mysql docker image
 > docker pull mysql
+# run mysql docker container
 > docker run -itd --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root mysql
+# download redis docker image
 > docker pull redis
+# run redis docker container
 > docker run -itd --name myredis -p 6379:6379 redis --requirepass "root"
 ```
+
+To stop and start the container, run the following:
+
+```bash
+# stop
+> docker stop mysql
+> docker stop myredis
+# start
+> docker start mysql
+> docker start myredis
+```
+
+You can also manage the containers in Docker Desktop.
 
 After starting the containers, please make sure that you have `test` database in MySQL.
 
