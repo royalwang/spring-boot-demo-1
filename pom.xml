@@ -12,11 +12,12 @@
     <!-- modules are sorted based on learning progress -->
     <modules>
         <module>spring</module>
-        <module>mvc</module>
-        <module>starter</module>
-        <module>mysql</module>
-        <module>mybatis</module>
-        <module>redis</module>
+        <module>mvc</module>            <!-- 8710 -->
+        <module>starter</module>        <!-- 8711 -->
+        <module>mysql</module>          <!-- 8712 -->
+        <module>mybatis</module>        <!-- 8713 -->
+        <module>redis</module>          <!-- 8714 -->
+        <module>swagger</module>        <!-- 8715 -->
     </modules>
 
     <properties>
@@ -65,6 +66,11 @@
                <groupId>org.apache.commons</groupId>
                <artifactId>commons-pool2</artifactId>
                <version>2.10.0</version>
+           </dependency>
+           <dependency>
+               <groupId>org.apache.commons</groupId>
+               <artifactId>commons-lang3</artifactId>
+               <version>3.12.0</version>
            </dependency>
            <dependency>
                <groupId>org.springframework.boot</groupId>

@@ -1,0 +1,11 @@
+server:
+  port: 8715
+  servlet:
+    context-path: /
+
+swagger:
+  enable: true
+  application-name: spring-boot-swagger-demo
+  application-version: 1.0
+  application-description: Spring Boot Swagger Demo
+  try-host: http://localhost:${server.port}
