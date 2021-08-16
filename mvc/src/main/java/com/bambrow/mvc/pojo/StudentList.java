@@ -1,7 +1,5 @@
 package com.bambrow.mvc.pojo;
 
-import com.bambrow.mvc.pojo.Student;
-
 import java.util.List;
 
 public class StudentList {
