@@ -1,0 +1,19 @@
+server:
+  port: 8716
+  servlet:
+    context-path: /
+
+swagger:
+  enable: true
+  application-name: spring-boot-hdfs-demo
+  application-version: 1.0
+  application-description: Spring Boot HDFS Demo
+  try-host: http://localhost:${server.port}
+
+hdfs:
+  root: hdfs://master:8020
+  user: root
+
+logging:
+  level:
+    com.bambrow: debug

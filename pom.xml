@@ -18,6 +18,7 @@
         <module>mybatis</module>        <!-- 8713 -->
         <module>redis</module>          <!-- 8714 -->
         <module>swagger</module>        <!-- 8715 -->
+        <module>hdfs</module>           <!-- 8716 -->
     </modules>
 
     <properties>
@@ -30,6 +31,7 @@
         <spring.boot.version>2.5.1</spring.boot.version>
         <mysql.version>8.0.21</mysql.version>
         <guava.version>29.0-jre</guava.version>
+        <gson.version>2.8.7</gson.version>
         <junit.version>4.12</junit.version>
         <lombok.version>1.18.20</lombok.version>
         <hutool.version>5.7.0</hutool.version>
@@ -60,6 +62,11 @@
            <dependency>
                <groupId>org.springframework.boot</groupId>
                <artifactId>spring-boot-starter-data-redis</artifactId>
+               <version>${spring.boot.version}</version>
+           </dependency>
+           <dependency>
+               <groupId>org.springframework.boot</groupId>
+               <artifactId>spring-boot-starter-thymeleaf</artifactId>
                <version>${spring.boot.version}</version>
            </dependency>
            <dependency>
@@ -117,6 +124,11 @@
                <groupId>com.google.guava</groupId>
                <artifactId>guava</artifactId>
                <version>${guava.version}</version>
+           </dependency>
+           <dependency>
+               <groupId>com.google.code.gson</groupId>
+               <artifactId>gson</artifactId>
+               <version>${gson.version}</version>
            </dependency>
            <dependency>
                <groupId>cn.hutool</groupId>
