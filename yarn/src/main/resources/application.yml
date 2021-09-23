@@ -1,0 +1,20 @@
+server:
+  port: 8717
+  servlet:
+    context-path: /
+
+swagger:
+  enable: true
+  application-name: spring-boot-yarn-demo
+  application-version: 1.0
+  application-description: Spring Boot YARN Demo
+  try-host: http://localhost:${server.port}
+
+yarn:
+  resourcemanager:
+    address: "master:8032"
+    admin-address: "master:8033"
+
+logging:
+  level:
+    com.bambrow: debug

@@ -19,6 +19,7 @@
         <module>redis</module>          <!-- 8714 -->
         <module>swagger</module>        <!-- 8715 -->
         <module>hdfs</module>           <!-- 8716 -->
+        <module>yarn</module>           <!-- 8717 -->
     </modules>
 
     <properties>
