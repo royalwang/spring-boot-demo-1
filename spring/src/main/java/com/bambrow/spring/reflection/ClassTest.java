@@ -26,7 +26,7 @@ public class ClassTest {
 
         System.out.println(c1.getName()); // java.lang.String
         System.out.println(c1.getSimpleName()); // String
-        System.out.println(c1.getPackageName()); // java.lang
+        // System.out.println(c1.getPackageName()); // java.lang
         System.out.println(c1.isInterface()); // false
         System.out.println(c1.isEnum()); // false
         System.out.println(c1.isArray()); // false
@@ -156,7 +156,7 @@ public class ClassTest {
 
         System.out.println(String[].class.getName()); // [Ljava.lang.String;
         System.out.println(String[].class.getSimpleName()); // String[]
-        System.out.println(String[].class.getPackageName()); // java.lang
+        // System.out.println(String[].class.getPackageName()); // java.lang
         System.out.println(String[].class.isArray()); // true
 
         for (Field field : String[].class.getFields()) {
