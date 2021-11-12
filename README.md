@@ -15,5 +15,6 @@ The complete module list:
         <module>swagger</module>        <!-- 8715 -->
         <module>hdfs</module>           <!-- 8716 -->
         <module>yarn</module>           <!-- 8717 -->
+        <module>docker</module>         <!-- 8718 -->
     </modules>
 ```
