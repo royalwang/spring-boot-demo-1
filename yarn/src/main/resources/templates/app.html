@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title th:text="'YARN Applications'">YARN</title>
+</head>
+<body>
+<div>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Queue</th>
+            <th>User</th>
+            <th>State</th>
+        </tr>
+        <tr th:each="app : ${appList}">
+            <td th:text="${app.appId}">ID</td>
+            <td th:text="${app.appName}">Name</td>
+            <td th:text="${app.appQueue}">Queue</td>
+            <td th:text="${app.appUser}">User</td>
+            <td th:text="${app.appState}">State</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

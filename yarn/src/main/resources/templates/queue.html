@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title th:text="'YARN Queues'">YARN</title>
+</head>
+<body>
+<div>
+    <ul th:fragment="fragment_queue(queueList)" th:unless="${#lists.isEmpty(queueList)}">
+        <li th:each="queue : ${queueList}" th:inline="text">
+            [[${queue.getQueueName()}]]
+            <ul th:replace="this::fragment_queue(${queue.getChildQueues()})"></ul>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

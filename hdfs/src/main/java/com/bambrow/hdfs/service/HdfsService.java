@@ -1,6 +1,7 @@
 package com.bambrow.hdfs.service;
 
 import com.bambrow.hdfs.config.HdfsConfig;
+import com.bambrow.hdfs.dto.FileObject;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -95,7 +96,7 @@ public class HdfsService {
 
     public boolean isDirectory(String path) {
         if (StringUtils.isEmpty(path)) {
-            return false;
+            return true;
         }
         FileSystem fs = getFileSystem();
         Path hdfsPath = new Path(getHdfsPath(path));
@@ -130,8 +131,8 @@ public class HdfsService {
         return mkdir;
     }
 
-    public List<Map<String, Object>> ls(String path, PathFilter filter) {
-        List<Map<String, Object>> list = new ArrayList<>();
+    public List<FileObject> ls(String path, PathFilter filter) {
+        List<FileObject> list = new ArrayList<>();
         FileSystem fs = getFileSystem();
         Path hdfsPath = new Path(getHdfsPath(path));
         try {
@@ -144,12 +145,12 @@ public class HdfsService {
             if (statusList != null) {
                 String rootPath = hdfsConfig.getRoot().endsWith("/") ? hdfsConfig.getRoot().substring(0, hdfsConfig.getRoot().length() - 1) : hdfsConfig.getRoot();
                 for (FileStatus status : statusList) {
-                    Map<String, Object> fileMap = new HashMap<>(2);
                     String absolutePath = status.getPath().toString();
                     String relativePath = absolutePath.replaceFirst("^" + rootPath.replace("/", "\\/"), "");
-                    fileMap.put("path", relativePath);
-                    fileMap.put("isDir", status.isDirectory());
-                    list.add(fileMap);
+                    FileObject fileObject = new FileObject();
+                    fileObject.setPath(relativePath);
+                    fileObject.setDir(status.isDirectory());
+                    list.add(fileObject);
                 }
             }
         } catch (Exception e) {
