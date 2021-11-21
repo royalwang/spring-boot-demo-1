@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title th:text="(${isTopLevel})? 'Buckets' : ${prefix}">S3</title>
+</head>
+<body>
+<div th:if="${isTopLevel}">
+    <table>
+        <tr th:each="bucket : ${buckets}">
+            <td>
+                <a th:href="@{/ls/{path}(path=${bucket.getName()})}" th:text="${bucket.getName()}">Link</a>
+            </td>
+        </tr>
+    </table>
+</div>
+<div th:unless="${isTopLevel}">
+    <table>
+        <tr th:each="result : ${results}">
+            <td>
+                <a th:if="${#strings.endsWith(result,'/')}" th:href="@{/ls/{path}(path=${result})}" th:text="${result}">Link</a>
+                <a th:unless="${#strings.endsWith(result,'/')}" th:href="@{/open/{path}(path=${result})}" th:text="${result}">Link</a>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

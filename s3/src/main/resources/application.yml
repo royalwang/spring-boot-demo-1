@@ -1,0 +1,13 @@
+server:
+  port: 8719
+  servlet:
+    context-path: /
+
+s3:
+  endpoint: endpoint
+  accessKey: ak
+  secretKey: sk
+
+logging:
+  level:
+    com.bambrow: debug
