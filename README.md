@@ -16,5 +16,7 @@ The complete module list:
         <module>hdfs</module>           <!-- 8716 -->
         <module>yarn</module>           <!-- 8717 -->
         <module>docker</module>         <!-- 8718 -->
+        <module>s3</module>             <!-- 8719 -->
+        <module>async</module>          <!-- 8720 -->
     </modules>
 ```
