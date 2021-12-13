@@ -18,5 +18,6 @@ The complete module list:
         <module>docker</module>         <!-- 8718 -->
         <module>s3</module>             <!-- 8719 -->
         <module>async</module>          <!-- 8720 -->
+        <!--module>log4j2</module-->    <!-- 8721 -->
     </modules>
 ```

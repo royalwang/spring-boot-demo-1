@@ -1,0 +1,7 @@
+server:
+  port: 8721
+
+logging:
+  config: log4j2.xml
+  level:
+    com.bambrow: debug

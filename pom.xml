@@ -29,6 +29,7 @@
         <module>docker</module>         <!-- 8718 -->
         <module>s3</module>             <!-- 8719 -->
         <module>async</module>          <!-- 8720 -->
+        <!--module>log4j2</module-->    <!-- 8721 -->
     </modules>
 
     <properties>
@@ -37,6 +38,7 @@
         <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
+        <log4j2.version>2.15.0</log4j2.version>
         <guava.version>29.0-jre</guava.version>
         <hutool.version>5.7.0</hutool.version>
     </properties>
