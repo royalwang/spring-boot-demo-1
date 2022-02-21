@@ -19,5 +19,7 @@ The complete module list:
         <module>s3</module>             <!-- 8719 -->
         <module>async</module>          <!-- 8720 -->
         <!--module>log4j2</module-->    <!-- 8721 -->
+        <module>fabric8</module>        <!-- 8722 -->
+        <module>kubernetes-java</module><!-- 8723 -->
     </modules>
 ```

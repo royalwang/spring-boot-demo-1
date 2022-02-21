@@ -1,0 +1,11 @@
+server:
+  port: 8723
+  servlet:
+    context-path: /
+
+k8s:
+  masterUrl: http://localhost:8001
+
+logging:
+  level:
+    com.bambrow: debug
